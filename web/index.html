@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="/eel.js"></script>
+  <title>Hello Eel</title>
+  <script>
+    const sayHello = async () => {
+      const name = document.getElementById('name').value
+      const greeter = eel.sayHello(name)
+      const greeting = await greeter()
+      document.getElementById('greeting').innerHTML = greeting
+    }
+  </script>
+</head>
+
+<body>
+  <p>
+    <input type="text" id="name" name="name" placeholder="What's your name?" />
+    <button onclick="sayHello()">Say Hello</button>
+  </p>
+  <p id="greeting"></p>
+</body>
+
+</html>
